@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "bedev:block/manual_burner_block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "bedev:block/manual_burner_block"
+    },
+    "axis=z": {
+      "model": "bedev:block/manual_burner_block_horizontal",
+      "x": 90
+    }
+  }
+}

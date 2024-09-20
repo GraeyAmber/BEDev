@@ -1,5 +1,6 @@
 package net.graeyamber.bedev;
 
+import net.graeyamber.bedev.registry.BlockEntityRegistry;
 import net.graeyamber.bedev.registry.BlockRegistry;
 import net.graeyamber.bedev.registry.CreativeTabRegistry;
 import net.graeyamber.bedev.registry.ItemRegistry;
@@ -34,6 +35,10 @@ public class BEDev
 
         BlockRegistry.BLOCKS.register(modEventBus);
         ItemRegistry.ITEMS.register(modEventBus);
+
+        /// registration of our DeferredRegister
+        BlockEntityRegistry.BLOCK_ENTITIES.register(modEventBus);
+
         CreativeTabRegistry.CREATIVE_TABS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.

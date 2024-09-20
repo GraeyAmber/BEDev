@@ -2,7 +2,9 @@ package net.graeyamber.bedev.datagen.provider;
 
 import net.graeyamber.bedev.BEDev;
 import net.graeyamber.bedev.registry.BlockRegistry;
+import net.graeyamber.bedev.registry.ItemRegistry;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -19,6 +21,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.GNEISS_BRICKS_BLOCK);
         blockWithItem(BlockRegistry.GNEISS_SMOOTH_BLOCK);
         blockWithItem(BlockRegistry.GNEISS_TILES_BLOCK);
+
+        axisBlock(BlockRegistry.MANUAL_BURNER_BLOCK.get());
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

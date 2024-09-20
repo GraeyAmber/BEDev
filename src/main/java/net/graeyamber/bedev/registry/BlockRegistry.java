@@ -1,6 +1,7 @@
 package net.graeyamber.bedev.registry;
 
 import net.graeyamber.bedev.BEDev;
+import net.graeyamber.bedev.block.ManualBurnerBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -20,4 +21,7 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> GNEISS_BRICKS_BLOCK = BLOCKS.register("gneiss_bricks_block", () -> new Block(GNEISS_BLOCK.get().properties()));
     public static final DeferredBlock<Block> GNEISS_SMOOTH_BLOCK = BLOCKS.register("gneiss_smooth_block", () -> new Block(GNEISS_BLOCK.get().properties()));
     public static final DeferredBlock<Block> GNEISS_TILES_BLOCK  = BLOCKS.register("gneiss_tiles_block" , () -> new Block(GNEISS_BLOCK.get().properties()));
+
+    /// block that will store a blockentity
+    public static final DeferredBlock<ManualBurnerBlock> MANUAL_BURNER_BLOCK  = BLOCKS.register("manual_burner_block", () -> new ManualBurnerBlock(GNEISS_BLOCK.get().properties()));
 }

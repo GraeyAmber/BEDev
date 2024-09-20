@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "bedev:block/manual_burner_block_end",
+    "side": "bedev:block/manual_burner_block_side"
+  }
+}

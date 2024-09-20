@@ -14,6 +14,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        //..basicItem(ItemRegistry.ITEMNAME.get());
+
+        // basicItem(ItemRegistry.MANUAL_BURNER_BLOCK_ITEM.get());
     }
 }
