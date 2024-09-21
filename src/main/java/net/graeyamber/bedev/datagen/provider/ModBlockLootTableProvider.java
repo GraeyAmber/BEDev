@@ -22,6 +22,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(BlockRegistry.GNEISS_TILES_BLOCK.get());
 
         dropSelf(BlockRegistry.MANUAL_BURNER_BLOCK.get());
+
+        dropSelf(BlockRegistry.DIM_LAMP_BLOCK.get());
     }
 
     @Override

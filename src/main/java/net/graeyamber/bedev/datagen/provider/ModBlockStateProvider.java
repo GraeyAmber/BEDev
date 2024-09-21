@@ -23,6 +23,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.GNEISS_TILES_BLOCK);
 
         axisBlock(BlockRegistry.MANUAL_BURNER_BLOCK.get());
+
+        blockWithItem(BlockRegistry.DIM_LAMP_BLOCK);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

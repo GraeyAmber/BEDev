@@ -1,6 +1,7 @@
 package net.graeyamber.bedev.registry;
 
 import net.graeyamber.bedev.BEDev;
+import net.graeyamber.bedev.block.entity.DimLampBlockEntity;
 import net.graeyamber.bedev.block.entity.ManualBurnerBlockEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -20,4 +21,10 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<ManualBurnerBlockEntity>> MANUAL_BURNER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("manual_burner_block_entity", () -> BlockEntityType.Builder.of(ManualBurnerBlockEntity::new,
                     BlockRegistry.MANUAL_BURNER_BLOCK.get()).build(null));
+
+
+    /// ticking blockentity
+    public static final Supplier<BlockEntityType<DimLampBlockEntity>> DIM_LAMP_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("dim_lamp_block_entity", () -> BlockEntityType.Builder.of(DimLampBlockEntity::new,
+                    BlockRegistry.DIM_LAMP_BLOCK.get()).build(null));
 }

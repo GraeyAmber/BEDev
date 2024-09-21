@@ -1,6 +1,7 @@
 package net.graeyamber.bedev.registry;
 
 import net.graeyamber.bedev.BEDev;
+import net.graeyamber.bedev.block.DimLampBlock;
 import net.graeyamber.bedev.block.ManualBurnerBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -24,4 +25,7 @@ public class BlockRegistry {
 
     /// block that will store a blockentity
     public static final DeferredBlock<ManualBurnerBlock> MANUAL_BURNER_BLOCK  = BLOCKS.register("manual_burner_block", () -> new ManualBurnerBlock(GNEISS_BLOCK.get().properties()));
+
+    /// block for ticking block entity
+    public static final DeferredBlock<DimLampBlock> DIM_LAMP_BLOCK  = BLOCKS.register("dim_lamp_block", () -> new DimLampBlock(GNEISS_BLOCK.get().properties()));
 }

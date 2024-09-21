@@ -8,7 +8,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static net.graeyamber.bedev.registry.BlockRegistry.BLOCKS;
 
 public class ItemRegistry {
 
@@ -21,4 +20,6 @@ public class ItemRegistry {
     public static final Supplier<BlockItem> GNEISS_TILES_BLOCK_ITEM  = ITEMS.registerSimpleBlockItem("gneiss_tiles_block" , BlockRegistry.GNEISS_TILES_BLOCK , new Item.Properties());
 
     public static final Supplier<BlockItem> MANUAL_BURNER_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("manual_burner_block", BlockRegistry.MANUAL_BURNER_BLOCK, new Item.Properties());
+
+    public static final Supplier<BlockItem> DIM_LAMP_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("dim_lamp_block", BlockRegistry.DIM_LAMP_BLOCK, new Item.Properties());
 }
