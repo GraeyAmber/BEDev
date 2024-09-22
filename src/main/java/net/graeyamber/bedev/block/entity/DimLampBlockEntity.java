@@ -52,8 +52,8 @@ public class DimLampBlockEntity extends BlockEntity implements ITickableBlockEnt
             }
             lit = !lit;
 
-            //. setChanged(this.level, this.worldPosition, this.getBlockState());
-            //. level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState().setValue(DimLampBlock.LIT, lit), DimLampBlock.UPDATE_ALL);
+            setChanged(this.level, this.worldPosition, this.getBlockState());
+            level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState().setValue(DimLampBlock.LIT, lit), DimLampBlock.UPDATE_ALL);
         }
 
         if(lit) {
@@ -61,4 +61,6 @@ public class DimLampBlockEntity extends BlockEntity implements ITickableBlockEnt
             ((ServerLevel)level).sendParticles(ParticleTypes.SMOKE, pos.getX() + .5, pos.getY() + 1.5, pos.getZ() + .5, 10, 0, 0, 0, 0.15);
         }
     }
+
+    
 }

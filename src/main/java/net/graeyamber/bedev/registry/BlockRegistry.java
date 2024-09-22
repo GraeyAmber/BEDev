@@ -2,6 +2,7 @@ package net.graeyamber.bedev.registry;
 
 import net.graeyamber.bedev.BEDev;
 import net.graeyamber.bedev.block.DimLampBlock;
+import net.graeyamber.bedev.block.ItemWarperBlock;
 import net.graeyamber.bedev.block.ManualBurnerBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -28,4 +29,7 @@ public class BlockRegistry {
 
     /// block for ticking block entity
     public static final DeferredBlock<DimLampBlock> DIM_LAMP_BLOCK  = BLOCKS.register("dim_lamp_block", () -> new DimLampBlock(GNEISS_BLOCK.get().properties()));
+
+    /// block with synced inventory + ticking
+    public static final DeferredBlock<ItemWarperBlock> ITEM_WARPER_BLOCK  = BLOCKS.register("item_warper_block", () -> new ItemWarperBlock(GNEISS_BLOCK.get().properties()));
 }

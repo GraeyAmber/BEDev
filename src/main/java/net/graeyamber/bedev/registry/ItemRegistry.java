@@ -22,4 +22,6 @@ public class ItemRegistry {
     public static final Supplier<BlockItem> MANUAL_BURNER_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("manual_burner_block", BlockRegistry.MANUAL_BURNER_BLOCK, new Item.Properties());
 
     public static final Supplier<BlockItem> DIM_LAMP_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("dim_lamp_block", BlockRegistry.DIM_LAMP_BLOCK, new Item.Properties());
+
+    public static final Supplier<BlockItem> ITEM_WARPER_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("item_warper_block_item", BlockRegistry.ITEM_WARPER_BLOCK, new Item.Properties());
 }
