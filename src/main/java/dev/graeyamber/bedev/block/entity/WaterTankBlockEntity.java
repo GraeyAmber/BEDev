@@ -29,9 +29,11 @@ public class WaterTankBlockEntity extends BlockEntity {
     //: private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
 
     private final int TANK_SIZE = 4000;
-    private final String NBT_TANK = "FluidTank";
+    private final String NBT_TANK = "WaterTank";
     private final FluidTank fluidTank = createFluidTank();
     //createFluidTank();
+
+    // LazyOptional<FluidTank>
     private final Lazy<FluidTank> fluidHandler = Lazy.of(() -> this.fluidTank);
 
     public WaterTankBlockEntity(BlockPos pos, BlockState blockState) {
@@ -116,6 +118,13 @@ public class WaterTankBlockEntity extends BlockEntity {
         }
     }
 
+    // i gotta study what this does in specific
+    @Override
+    public void invalidateCapabilities() {
+        super.invalidateCapabilities();
+        this.fluidHandler.invalidate();
+    }
+
     // The getUpdatePacket()/onDataPacket() pair is used when a block update happens on the client
     // (a blockstate change or an explicit notification of a block update from the server). It's
     // easiest to implement them based on getUpdateTag()/handleUpdateTag()
@@ -133,7 +142,7 @@ public class WaterTankBlockEntity extends BlockEntity {
             return;
         }
 
-        // Lazy<IFluidHandlerItem> fluidItem = stack
+        // here you can add logic to fill/drain item tanks, if you add some
 
 
     }
@@ -179,10 +188,20 @@ public class WaterTankBlockEntity extends BlockEntity {
     }
 
 
+    /// aka: sendUpdate()
     private void markUpdated() {
         this.setChanged();
         this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
     }
 
 
+
+    /// all the getters
+    public Lazy<FluidTank> getFluidHandler() {
+        return this.fluidHandler;
+    }
+
+    public FluidTank getFluidTank() {
+        return this.fluidTank;
+    }
 }

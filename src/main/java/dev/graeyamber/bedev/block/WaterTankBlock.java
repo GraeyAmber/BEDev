@@ -7,6 +7,7 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -16,10 +17,14 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
 public class WaterTankBlock extends Block implements EntityBlock {
+
+    protected static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 
     public WaterTankBlock(Properties properties) {
         super(properties);
@@ -29,6 +34,12 @@ public class WaterTankBlock extends Block implements EntityBlock {
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
         return new WaterTankBlockEntity(blockPos, blockState);
+    }
+
+
+
+    protected VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_, CollisionContext p_152920_) {
+        return SHAPE;
     }
 
 
@@ -63,4 +74,20 @@ public class WaterTankBlock extends Block implements EntityBlock {
         }
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
+
+
+    /// this is for popping out items, could be used to keep stored inventory?
+    //: @Override
+    //: protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+    //:     BlockEntity be = level.getBlockEntity(pos);
+    //:     if(be instanceof WaterTankBlockEntity blockEntity) {
+    //:         blockEntity.getInventoryOptional().ifpresent(handler -> {
+    //:             for (int i = 0; handler.getSlots(); i++) {
+    //:                 Block.popResource(level, pos, handler.getStackInSlot(i));
+    //:             }
+    //:         });
+    //:     }
+    //:
+    //:     super.onRemove(state, level, pos, newState, movedByPiston);
+    //: }
 }
